@@ -17,6 +17,11 @@ java {
 
 kotlin {
     jvmToolchain(21)
+    compilerOptions {
+        // Usa o compilador K1 (1.9), pois o K2 travou com um erro interno
+        languageVersion.set(org.jetbrains.kotlin.gradle.dsl.KotlinVersion.KOTLIN_1_9)
+        apiVersion.set(org.jetbrains.kotlin.gradle.dsl.KotlinVersion.KOTLIN_1_9)
+    }
 }
 
 repositories {
@@ -61,15 +66,6 @@ dependencies {
 tasks.withType<JavaCompile>().configureEach {
     options.encoding = "UTF-8"
     options.release.set(21)
-}
-
-tasks.processResources {
-    // Substitui variaveis no neoforge.mods.toml, se voce usar ${version}
-    val props = mapOf("version" to project.version.toString())
-    inputs.properties(props)
-    filesMatching("META-INF/neoforge.mods.toml") {
-        expand(props)
-    }
 }
 
 tasks.jar {
