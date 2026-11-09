@@ -5,7 +5,7 @@ on:
     branches: [main, master]
   pull_request:
     branches: [main, master]
-  workflow_dispatch: # Manual trigger
+  workflow_dispatch:
 
 jobs:
   build:
@@ -30,24 +30,30 @@ jobs:
         with:
           gradle-version: 'wrapper'
 
-      - name: Make gradlew executable
-        run: chmod +x gradlew
+      - name: Ensure Gradle wrapper exists
+        working-directory: ./modminecraft1
+        run: |
+          if [ ! -f gradlew ]; then
+            gradle wrapper --no-daemon
+          fi
+          chmod +x gradlew
 
       - name: Build with Gradle
+        working-directory: ./modminecraft1
         run: ./gradlew build --no-daemon
 
       - name: Upload JAR artifact
         uses: actions/upload-artifact@v4
         with:
           name: navalwarfare-mod
-          path: build/libs/navalwarfare-*.jar
+          path: modminecraft1/build/libs/*.jar
           retention-days: 7
 
       - name: Create Release (on tag)
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v1
         with:
-          files: build/libs/navalwarfare-*.jar
+          files: modminecraft1/build/libs/*.jar
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
