@@ -1,17 +1,22 @@
-import org.gradle.kotlin.dsl.`kotlin-dsl`
-import java.net.URI
-
 plugins {
-    id("java")
-    id("org.jetbrains.kotlin.jvm") version "1.9.22"
-    id("net.neoforged.gradle") version "6.0.+"
+    id("java-library")
+    id("org.jetbrains.kotlin.jvm") version "2.0.21"
+    id("net.neoforged.moddev") version "2.0.78"
 }
 
 group = "com.tlgd.navalwarfare"
 version = "1.0.0"
 
+base {
+    archivesName.set("navalwarfare")
+}
+
 java {
     toolchain.languageVersion.set(JavaLanguageVersion.of(21))
+}
+
+kotlin {
+    jvmToolchain(21)
 }
 
 repositories {
@@ -19,114 +24,61 @@ repositories {
     maven("https://maven.neoforged.net/releases") {
         name = "NeoForge"
     }
-    maven("https://maven.minecraftforge.net/releases") {
-        name = "Forge"
+    // Kotlin for Forge (fornece o Kotlin em runtime para mods NeoForge)
+    maven("https://thedarkcolour.github.io/KotlinForForge/") {
+        name = "KotlinForForge"
     }
-    maven("https://jitpack.io") {
-        name = "JitPack"
+}
+
+neoForge {
+    version = "21.1.172"
+
+    runs {
+        create("client") {
+            client()
+        }
+        create("server") {
+            server()
+            programArgument("--nogui")
+        }
+    }
+
+    mods {
+        create("navalwarfare") {
+            sourceSet(sourceSets.main.get())
+        }
     }
 }
 
 dependencies {
-    // NeoForge
-    minecraft("net.neoforged:neoforge:1.21.1-21.1.0")
+    // Kotlin para NeoForge (nao empacotamos o Kotlin dentro do jar)
+    implementation("thedarkcolour:kotlinforforge-neoforge:5.6.0")
 
-    // Kotlin stdlib
-    implementation(kotlin("stdlib-jdk8"))
-    implementation(kotlin("reflect"))
-
-    // Gson for JSON
-    implementation("com.google.code.gson:gson:2.10.1")
-
-    // Optional: Create API (for vehicle detection)
+    // Opcional: Create API
     // compileOnly("com.simibubi.create:create:1.21.1-0.6.0")
 }
 
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-    kotlinOptions {
-        jvmTarget = "21"
-        freeCompilerArgs += listOf(
-            "-Xjvm-default=all",
-            "-Xopt-in=kotlin.RequiresOptIn",
-            "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
-        )
-    }
-}
-
-tasks.withType<JavaCompile> {
+tasks.withType<JavaCompile>().configureEach {
     options.encoding = "UTF-8"
-    options.release = 21
-    options.compilerArgs.addAll(listOf("-Xlint:unchecked", "-Xlint:deprecation"))
+    options.release.set(21)
 }
 
-// NeoForge mod configuration
-neoforge {
-    mappingsChannel.set("official")
-    mappingsVersion.set("1.21.1")
-    modId.set("navalwarfare")
-    modName.set("Naval Warfare")
-    version.set(project.version.toString())
-
-    // Mixins
-    mixinConfigs.add("navalwarfare.mixins.json")
-}
-
-// Run configurations
-tasks.named("runClient") {
-    doLast {
-        jvmArgs(
-            "-Dforge.logging.console.level=debug",
-            "-Dforge.logging.markers=SCAN,REGISTRIES,REGISTRYDUMP"
-        )
+tasks.processResources {
+    // Substitui variaveis no neoforge.mods.toml, se voce usar ${version}
+    val props = mapOf("version" to project.version.toString())
+    inputs.properties(props)
+    filesMatching("META-INF/neoforge.mods.toml") {
+        expand(props)
     }
 }
 
-tasks.named("runServer") {
-    doLast {
-        jvmArgs(
-            "-Dforge.logging.console.level=debug"
-        )
-    }
-}
-
-// Build JAR with all dependencies (shadow jar style)
-tasks.named("jar") {
+tasks.jar {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     manifest {
         attributes(
             "Implementation-Title" to "Naval Warfare",
-            "Implementation-Version" to version,
-            "Implementation-Vendor" to "TLGD",
-            "NeoForge-Mod" to "navalwarfare",
-            "Main-Class" to "net.neoforged.fml.loading.FMLServerLaunchProvider"
+            "Implementation-Version" to project.version.toString(),
+            "Implementation-Vendor" to "TLGD"
         )
     }
-    from(configurations.runtimeClasspath.map { if (it.isDirectory) it else zipTree(it) }) {
-        exclude("META-INF/MANIFEST.MF")
-        exclude("META-INF/*.SF")
-        exclude("META-INF/*.DSA")
-        exclude("META-INF/*.RSA")
-    }
-}
-
-// Source sets
-sourceSets {
-    main {
-        kotlin {
-            srcDirs("src/main/kotlin")
-        }
-        resources {
-            srcDirs("src/main/resources")
-        }
-    }
-}
-
-// Compile tasks
-tasks.compileKotlin {
-    dependsOn(tasks.processResources)
-}
-
-// Signing (opcional, para publicação)
-tasks.named("signMavenPublication") {
-    onlyIf { project.hasProperty("signing.keyId") }
 }
