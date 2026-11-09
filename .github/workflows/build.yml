@@ -8,6 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: modminecraft1
     steps:
       - uses: actions/checkout@v4
 
@@ -17,6 +20,8 @@ jobs:
           java-version: 21
 
       - uses: gradle/actions/setup-gradle@v4
+        with:
+          build-root-directory: modminecraft1
 
       - name: Dar permissão ao gradlew
         run: chmod +x gradlew
@@ -27,4 +32,4 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: mod-jar
-          path: build/libs/*.jar
+          path: modminecraft1/build/libs/*.jar
