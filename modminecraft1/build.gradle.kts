@@ -3,8 +3,7 @@ import java.net.URI
 
 plugins {
     id("java")
-    id("kotlin") version "1.9.22"
-    id("com.mojang.mappings") version "1.0.0"
+    id("org.jetbrains.kotlin.jvm") version "1.9.22"
     id("net.neoforged.gradle") version "6.0.+"
 }
 
@@ -30,7 +29,7 @@ repositories {
 
 dependencies {
     // NeoForge
-    minecraft "net.neoforged:neoforge:1.21.1-21.1.0"
+    minecraft("net.neoforged:neoforge:1.21.1-21.1.0")
 
     // Kotlin stdlib
     implementation(kotlin("stdlib-jdk8"))
@@ -57,7 +56,7 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
 tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
     options.release = 21
-    options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+    options.compilerArgs.addAll(listOf("-Xlint:unchecked", "-Xlint:deprecation"))
 }
 
 // NeoForge mod configuration
@@ -95,11 +94,11 @@ tasks.named("jar") {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     manifest {
         attributes(
-            "Implementation-Title": "Naval Warfare",
-            "Implementation-Version": version,
-            "Implementation-Vendor": "TLGD",
-            "NeoForge-Mod": "navalwarfare",
-            "Main-Class": "net.neoforged.fml.loading.FMLServerLaunchProvider"
+            "Implementation-Title" to "Naval Warfare",
+            "Implementation-Version" to version,
+            "Implementation-Vendor" to "TLGD",
+            "NeoForge-Mod" to "navalwarfare",
+            "Main-Class" to "net.neoforged.fml.loading.FMLServerLaunchProvider"
         )
     }
     from(configurations.runtimeClasspath.map { if (it.isDirectory) it else zipTree(it) }) {
