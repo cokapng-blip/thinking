@@ -1,0 +1,17 @@
+{
+  "id": "suez_canal",
+  "displayName": "Suez Canal",
+  "minX": 1000,
+  "minY": 60,
+  "minZ": -500,
+  "maxX": 3000,
+  "maxY": 100,
+  "maxZ": 500,
+  "dimension": "minecraft:overworld",
+  "attackWindows": [
+    { "dayOfWeek": "TUESDAY", "startTime": "20:00", "durationMinutes": 30 },
+    { "dayOfWeek": "SATURDAY", "startTime": "16:00", "durationMinutes": 30 }
+  ],
+  "ownerNationId": null,
+  "ownerNationName": null
+}

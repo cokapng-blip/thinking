@@ -1,0 +1,53 @@
+{
+  "id": "battleship",
+  "displayName": "Battleship",
+  "description": "Heavily armored capital ship with maximum firepower and protection",
+  "icon": "navalwarfare:textures/gui/vehicle/battleship.png",
+  "minLength": 160,
+  "maxLength": 240,
+  "minWidth": 24,
+  "maxWidth": 36,
+  "minHeight": 20,
+  "maxHeight": 36,
+  "minBlockCount": 20000,
+  "maxBlockCount": 50000,
+  "requiredBlocks": {
+    "minecraft:dark_oak_planks": 1200,
+    "minecraft:iron_block": 600,
+    "minecraft:iron_bars": 400,
+    "minecraft:blast_furnace": 32,
+    "minecraft:dispenser": 48,
+    "minecraft:lantern": 80,
+    "minecraft:anvil": 8,
+    "minecraft:grindstone": 8,
+    "minecraft:netherite_block": 50,
+    "minecraft:gold_block": 40,
+    "minecraft:diamond_block": 10
+  },
+  "optionalBlocks": {
+    "create:propeller": 4,
+    "create:mechanical_drill": 6,
+    "minecraft:chest": 32,
+    "minecraft:barrel": 16,
+    "create:cogwheel": 32,
+    "create:flywheel": 8,
+    "create:mechanical_arm": 6,
+    "create:sequenced_gearshift": 4,
+    "create:mechanical_bearing": 2
+  },
+  "forbiddenBlocks": [
+    "minecraft:tnt",
+    "minecraft:bedrock",
+    "minecraft:command_block",
+    "minecraft:spawner"
+  ],
+  "scoreValue": 200,
+  "crewMin": 40,
+  "crewMax": 100,
+  "crewRecommended": 80,
+  "speedMultiplier": 0.9,
+  "turnRateMultiplier": 0.7,
+  "healthMultiplier": 2.5,
+  "tags": ["capital", "heavy_armor", "maximum_firepower", "flagship"],
+  "recognitionPriority": 60
+}

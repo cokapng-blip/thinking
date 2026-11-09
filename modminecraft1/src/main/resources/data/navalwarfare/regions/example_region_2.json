@@ -1,0 +1,63 @@
+{
+  "id": "coral_reef",
+  "displayName": "Coral Reef Atoll",
+  "dimension": "minecraft:overworld",
+  "bounds": {
+    "min": { "x": 1000, "y": 0, "z": 1000 },
+    "max": { "x": 2000, "y": 100, "z": 2000 }
+  },
+  "attackWindows": [
+    { "dayOfWeek": "SUNDAY", "startTime": "18:00", "durationMinutes": 90 },
+    { "dayOfWeek": "FRIDAY", "startTime": "21:00", "durationMinutes": 60 }
+  ],
+  "ownerNationId": null,
+  "ownerNationName": null,
+  "rewards": {
+    "dailyMoney": 3000,
+    "dailyItems": [
+      { "itemId": "minecraft:prismarine_crystals", "count": 32, "weight": 10 },
+      { "itemId": "minecraft:prismarine_shard", "count": 64, "weight": 8 },
+      { "itemId": "minecraft:heart_of_the_sea", "count": 1, "weight": 1 },
+      { "itemId": "minecraft:nautilus_shell", "count": 8, "weight": 5 }
+    ],
+    "dailyResources": [
+      { "resourceId": "navalwarfare:prismarine", "amount": 500 }
+    ],
+    "captureBonusMoney": 7500,
+    "captureBonusItems": [
+      { "itemId": "minecraft:trident", "count": 1, "weight": 2 },
+      { "itemId": "minecraft:conduit", "count": 1, "weight": 1 }
+    ],
+    "intervalHours": 24,
+    "enabled": true
+  },
+  "objectives": [
+    {
+      "type": "multipoint",
+      "id": "coral_outposts",
+      "displayName": "Capture Coral Outposts",
+      "description": "Capture and hold 3 of 5 coral outposts",
+      "points": [
+        { "x": 1200, "z": 1200, "name": "North Outpost", "radius": 30, "captureTimeSeconds": 60 },
+        { "x": 1800, "z": 1200, "name": "East Outpost", "radius": 30, "captureTimeSeconds": 60 },
+        { "x": 1800, "z": 1800, "name": "South Outpost", "radius": 30, "captureTimeSeconds": 60 },
+        { "x": 1200, "z": 1800, "name": "West Outpost", "radius": 30, "captureTimeSeconds": 60 },
+        { "x": 1500, "z": 1500, "name": "Central Outpost", "radius": 40, "captureTimeSeconds": 90 }
+      ],
+      "requiredPoints": 3,
+      "rewardPoints": 800,
+      "requiredForVictory": true
+    },
+    {
+      "type": "superiority",
+      "id": "reef_dominance",
+      "displayName": "Reef Naval Superiority",
+      "description": "Maintain naval superiority with 5+ ships for 10 minutes",
+      "minShips": 5,
+      "requiredClasses": ["destroyer", "frigate", "cruiser", "submarine"],
+      "durationSeconds": 600,
+      "rewardPoints": 600,
+      "requiredForVictory": false
+    }
+  ]
+}

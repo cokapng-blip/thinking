@@ -1,0 +1,74 @@
+{
+  "id": "iron_bay",
+  "displayName": "Iron Bay",
+  "dimension": "minecraft:overworld",
+  "bounds": {
+    "min": { "x": -500, "y": 0, "z": -500 },
+    "max": { "x": 500, "y": 120, "z": 500 }
+  },
+  "attackWindows": [
+    { "dayOfWeek": "SATURDAY", "startTime": "20:00", "durationMinutes": 60 },
+    { "dayOfWeek": "WEDNESDAY", "startTime": "19:00", "durationMinutes": 45 }
+  ],
+  "ownerNationId": null,
+  "ownerNationName": null,
+  "rewards": {
+    "dailyMoney": 5000,
+    "dailyItems": [
+      { "itemId": "minecraft:iron_ingot", "count": 64, "weight": 10 },
+      { "itemId": "minecraft:diamond", "count": 2, "weight": 2 },
+      { "itemId": "create:copper_ingot", "count": 32, "weight": 8 }
+    ],
+    "dailyResources": [
+      { "resourceId": "navalwarfare:fuel", "amount": 1000 },
+      { "resourceId": "navalwarfare:steel", "amount": 500 }
+    ],
+    "captureBonusMoney": 10000,
+    "captureBonusItems": [
+      { "itemId": "minecraft:netherite_ingot", "count": 4, "weight": 1 },
+      { "itemId": "minecraft:elytra", "count": 1, "weight": 1 }
+    ],
+    "intervalHours": 24,
+    "enabled": true
+  },
+  "objectives": [
+    {
+      "type": "areacontrol",
+      "id": "iron_bay_central",
+      "displayName": "Central Control Point",
+      "description": "Control the central platform of Iron Bay",
+      "centerX": 0,
+      "centerZ": 0,
+      "radius": 50,
+      "requiredTimeSeconds": 300,
+      "rewardPoints": 500,
+      "requiredForVictory": true
+    },
+    {
+      "type": "escort",
+      "id": "supply_convoy",
+      "displayName": "Supply Convoy Escort",
+      "description": "Escort the supply convoy from north to south",
+      "startX": 0,
+      "startZ": -400,
+      "endX": 0,
+      "endZ": 400,
+      "requiredVehicles": 3,
+      "rewardPoints": 400,
+      "requiredForVictory": false
+    },
+    {
+      "type": "destroy",
+      "id": "enemy_fortress",
+      "displayName": "Destroy Enemy Fortress",
+      "description": "Destroy the enemy coastal fortress",
+      "targetX": 300,
+      "targetY": 80,
+      "targetZ": 300,
+      "targetType": "structure",
+      "requiredDamage": 50000,
+      "rewardPoints": 600,
+      "requiredForVictory": true
+    }
+  ]
+}

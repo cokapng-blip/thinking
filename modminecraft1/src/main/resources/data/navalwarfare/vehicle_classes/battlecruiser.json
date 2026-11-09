@@ -1,0 +1,51 @@
+{
+  "id": "battlecruiser",
+  "displayName": "Battlecruiser",
+  "description": "Fast capital ship with battleship-grade guns but lighter armor",
+  "icon": "navalwarfare:textures/gui/vehicle/battlecruiser.png",
+  "minLength": 140,
+  "maxLength": 200,
+  "minWidth": 20,
+  "maxWidth": 30,
+  "minHeight": 18,
+  "maxHeight": 32,
+  "minBlockCount": 12000,
+  "maxBlockCount": 30000,
+  "requiredBlocks": {
+    "minecraft:dark_oak_planks": 800,
+    "minecraft:iron_block": 400,
+    "minecraft:iron_bars": 300,
+    "minecraft:blast_furnace": 24,
+    "minecraft:dispenser": 36,
+    "minecraft:lantern": 60,
+    "minecraft:anvil": 6,
+    "minecraft:grindstone": 6,
+    "minecraft:netherite_block": 30,
+    "minecraft:gold_block": 20
+  },
+  "optionalBlocks": {
+    "create:propeller": 4,
+    "create:mechanical_drill": 4,
+    "minecraft:chest": 24,
+    "minecraft:barrel": 12,
+    "create:cogwheel": 24,
+    "create:flywheel": 6,
+    "create:mechanical_arm": 4,
+    "create:sequenced_gearshift": 2
+  },
+  "forbiddenBlocks": [
+    "minecraft:tnt",
+    "minecraft:bedrock",
+    "minecraft:command_block",
+    "minecraft:spawner"
+  ],
+  "scoreValue": 150,
+  "crewMin": 25,
+  "crewMax": 60,
+  "crewRecommended": 45,
+  "speedMultiplier": 1.1,
+  "turnRateMultiplier": 0.85,
+  "healthMultiplier": 1.8,
+  "tags": ["capital", "fast", "heavy_guns", "battleline"],
+  "recognitionPriority": 50
+}

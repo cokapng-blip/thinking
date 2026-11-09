@@ -1,0 +1,47 @@
+{
+  "id": "transport",
+  "displayName": "Transport Ship",
+  "description": "Cargo vessel for moving troops, supplies, and equipment across seas",
+  "icon": "navalwarfare:textures/gui/vehicle/transport.png",
+  "minLength": 50,
+  "maxLength": 120,
+  "minWidth": 14,
+  "maxWidth": 22,
+  "minHeight": 10,
+  "maxHeight": 20,
+  "minBlockCount": 1000,
+  "maxBlockCount": 8000,
+  "requiredBlocks": {
+    "minecraft:oak_planks": 300,
+    "minecraft:dark_oak_planks": 100,
+    "minecraft:iron_block": 50,
+    "minecraft:iron_bars": 50,
+    "minecraft:chest": 20,
+    "minecraft:barrel": 10,
+    "minecraft:lantern": 20
+  },
+  "optionalBlocks": {
+    "create:propeller": 2,
+    "create:mechanical_drill": 1,
+    "minecraft:furnace": 4,
+    "minecraft:crafting_table": 2,
+    "create:cogwheel": 8,
+    "minecraft:hopper": 8
+  },
+  "forbiddenBlocks": [
+    "minecraft:tnt",
+    "minecraft:bedrock",
+    "minecraft:command_block",
+    "minecraft:spawner",
+    "minecraft:dispenser"
+  ],
+  "scoreValue": 20,
+  "crewMin": 3,
+  "crewMax": 12,
+  "crewRecommended": 6,
+  "speedMultiplier": 0.9,
+  "turnRateMultiplier": 0.8,
+  "healthMultiplier": 1.2,
+  "tags": ["cargo", "troop_transport", "logistics", "supply", "auxiliary"],
+  "recognitionPriority": 15
+}

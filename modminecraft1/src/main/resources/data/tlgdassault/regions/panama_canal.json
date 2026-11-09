@@ -1,0 +1,17 @@
+{
+  "id": "panama_canal",
+  "displayName": "Panama Canal",
+  "minX": -800,
+  "minY": 60,
+  "minZ": -200,
+  "maxX": 800,
+  "maxY": 100,
+  "maxZ": 200,
+  "dimension": "minecraft:overworld",
+  "attackWindows": [
+    { "dayOfWeek": "WEDNESDAY", "startTime": "20:00", "durationMinutes": 30 },
+    { "dayOfWeek": "SUNDAY", "startTime": "18:00", "durationMinutes": 30 }
+  ],
+  "ownerNationId": null,
+  "ownerNationName": null
+}

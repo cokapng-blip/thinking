@@ -1,0 +1,51 @@
+modLoader = "neoforge"
+loaderVersion = "[21.1,)"
+license = "MIT"
+issueTrackerURL = "https://github.com/seu-usuario/TLGD-Assault-Regions/issues"
+
+[[mods]]
+modId = "tlgdassault"
+version = "${file.jarVersion}"
+displayName = "TLGD Assault Regions"
+description = '''
+Sistema de Assault Regions estilo CCNet para servidores TLGD (Territory Land Grid Defense).
+- Regiões neutras capturáveis com janelas de ataque semanais
+- Sistema de pontuação por presença e eliminações
+- Integração com mods de veículos/armas
+- Recompensas diárias automáticas para nações
+- GUIs intuitivas para gerenciamento
+'''
+displayURL = "https://github.com/seu-usuario/TLGD-Assault-Regions"
+credits = "Desenvolvido para sistema TLGD"
+authors = "SeuNome"
+logoFile = "assets/tlgdassault/icon.png"
+
+[[dependencies.tlgdassault]]
+modId = "neoforge"
+mandatory = true
+versionRange = "[21.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.tlgdassault]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.21.1]"
+ordering = "NONE"
+side = "BOTH"
+
+# Opcional: Cloth Config para GUIs de configuração
+[[dependencies.tlgdassault]]
+modId = "cloth_config"
+mandatory = false
+versionRange = "[15.0,)"
+ordering = "AFTER"
+side = "CLIENT"
+
+# Opcional: ModMenu
+[[dependencies.tlgdassault]]
+modId = "modmenu"
+mandatory = false
+versionRange = "[8.0,)"
+ordering = "AFTER"
+side = "CLIENT"

@@ -1,0 +1,51 @@
+{
+  "id": "submarine",
+  "displayName": "Submarine",
+  "description": "Submersible warship for stealth operations and anti-ship warfare",
+  "icon": "navalwarfare:textures/gui/vehicle/submarine.png",
+  "minLength": 30,
+  "maxLength": 80,
+  "minWidth": 6,
+  "maxWidth": 12,
+  "minHeight": 6,
+  "maxHeight": 14,
+  "minBlockCount": 300,
+  "maxBlockCount": 4000,
+  "requiredBlocks": {
+    "minecraft:dark_oak_planks": 100,
+    "minecraft:iron_block": 80,
+    "minecraft:iron_bars": 60,
+    "minecraft:blast_furnace": 6,
+    "minecraft:dispenser": 8,
+    "minecraft:lantern": 15,
+    "minecraft:glass": 50,
+    "minecraft:dark_oak_log": 30,
+    "create:fluid_tank": 2
+  },
+  "optionalBlocks": {
+    "create:propeller": 1,
+    "create:mechanical_drill": 1,
+    "minecraft:chest": 6,
+    "minecraft:barrel": 3,
+    "create:cogwheel": 8,
+    "create:flywheel": 2,
+    "create:fluid_pipe": 4
+  },
+  "forbiddenBlocks": [
+    "minecraft:tnt",
+    "minecraft:bedrock",
+    "minecraft:command_block",
+    "minecraft:spawner",
+    "minecraft:glowstone",
+    "minecraft:sea_lantern"
+  ],
+  "scoreValue": 150,
+  "crewMin": 4,
+  "crewMax": 16,
+  "crewRecommended": 10,
+  "speedMultiplier": 1.0,
+  "turnRateMultiplier": 0.9,
+  "healthMultiplier": 1.0,
+  "tags": ["stealth", "submersible", "torpedo", "recon", "special_ops"],
+  "recognitionPriority": 25
+}

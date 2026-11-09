@@ -1,0 +1,17 @@
+{
+  "id": "sahara",
+  "displayName": "Sahara Desert",
+  "minX": -10000,
+  "minY": 60,
+  "minZ": -10000,
+  "maxX": 10000,
+  "maxY": 120,
+  "maxZ": 10000,
+  "dimension": "minecraft:overworld",
+  "attackWindows": [
+    { "dayOfWeek": "FRIDAY", "startTime": "19:00", "durationMinutes": 30 },
+    { "dayOfWeek": "SATURDAY", "startTime": "14:00", "durationMinutes": 30 }
+  ],
+  "ownerNationId": null,
+  "ownerNationName": null
+}

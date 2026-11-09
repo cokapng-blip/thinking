@@ -1,0 +1,39 @@
+{
+  "id": "patrol_boat",
+  "displayName": "Patrol Boat",
+  "description": "Small, fast attack craft for coastal patrol and reconnaissance",
+  "icon": "navalwarfare:textures/gui/vehicle/patrol_boat.png",
+  "minLength": 10,
+  "maxLength": 25,
+  "minWidth": 4,
+  "maxWidth": 8,
+  "minHeight": 3,
+  "maxHeight": 8,
+  "minBlockCount": 50,
+  "maxBlockCount": 500,
+  "requiredBlocks": {
+    "minecraft:oak_planks": 20,
+    "minecraft:dark_oak_planks": 10,
+    "minecraft:iron_bars": 5,
+    "minecraft:lantern": 2
+  },
+  "optionalBlocks": {
+    "minecraft:dispenser": 2,
+    "minecraft:chest": 1,
+    "create:propeller": 1
+  },
+  "forbiddenBlocks": [
+    "minecraft:tnt",
+    "minecraft:bedrock",
+    "minecraft:command_block"
+  ],
+  "scoreValue": 25,
+  "crewMin": 1,
+  "crewMax": 4,
+  "crewRecommended": 2,
+  "speedMultiplier": 1.5,
+  "turnRateMultiplier": 1.3,
+  "healthMultiplier": 0.8,
+  "tags": ["light", "fast", "coastal", "recon"],
+  "recognitionPriority": 10
+}

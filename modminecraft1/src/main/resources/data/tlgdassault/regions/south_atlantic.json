@@ -1,0 +1,17 @@
+{
+  "id": "south_atlantic",
+  "displayName": "South Atlantic",
+  "minX": -5000,
+  "minY": 60,
+  "minZ": -5000,
+  "maxX": 5000,
+  "maxY": 200,
+  "maxZ": 5000,
+  "dimension": "minecraft:overworld",
+  "attackWindows": [
+    { "dayOfWeek": "SATURDAY", "startTime": "20:00", "durationMinutes": 30 },
+    { "dayOfWeek": "SUNDAY", "startTime": "15:00", "durationMinutes": 30 }
+  ],
+  "ownerNationId": null,
+  "ownerNationName": null
+}

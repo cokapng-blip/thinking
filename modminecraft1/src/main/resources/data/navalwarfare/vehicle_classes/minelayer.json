@@ -1,0 +1,48 @@
+{
+  "id": "minelayer",
+  "displayName": "Minelayer",
+  "description": "Specialized vessel for deploying and clearing naval mines",
+  "icon": "navalwarfare:textures/gui/vehicle/minelayer.png",
+  "minLength": 35,
+  "maxLength": 70,
+  "minWidth": 10,
+  "maxWidth": 16,
+  "minHeight": 6,
+  "maxHeight": 14,
+  "minBlockCount": 500,
+  "maxBlockCount": 4000,
+  "requiredBlocks": {
+    "minecraft:dark_oak_planks": 150,
+    "minecraft:iron_block": 40,
+    "minecraft:iron_bars": 30,
+    "minecraft:blast_furnace": 4,
+    "minecraft:dispenser": 12,
+    "minecraft:lantern": 10,
+    "minecraft:tnt": 20,
+    "minecraft:chest": 8,
+    "minecraft:barrel": 4,
+    "minecraft:stone_button": 6
+  },
+  "optionalBlocks": {
+    "create:propeller": 2,
+    "create:mechanical_drill": 1,
+    "create:cogwheel": 6,
+    "create:deployer": 4,
+    "minecraft:redstone_lamp": 4,
+    "minecraft:comparator": 2
+  },
+  "forbiddenBlocks": [
+    "minecraft:bedrock",
+    "minecraft:command_block",
+    "minecraft:spawner"
+  ],
+  "scoreValue": 60,
+  "crewMin": 4,
+  "crewMax": 14,
+  "crewRecommended": 8,
+  "speedMultiplier": 1.0,
+  "turnRateMultiplier": 1.0,
+  "healthMultiplier": 1.0,
+  "tags": ["mine_warfare", "specialized", "area_denial", "countermeasures"],
+  "recognitionPriority": 25
+}

@@ -1,0 +1,47 @@
+{
+  "id": "frigate",
+  "displayName": "Frigate",
+  "description": "Multi-role warship capable of independent patrol and fleet operations",
+  "icon": "navalwarfare:textures/gui/vehicle/frigate.png",
+  "minLength": 60,
+  "maxLength": 100,
+  "minWidth": 12,
+  "maxWidth": 18,
+  "minHeight": 10,
+  "maxHeight": 20,
+  "minBlockCount": 1500,
+  "maxBlockCount": 6000,
+  "requiredBlocks": {
+    "minecraft:dark_oak_planks": 200,
+    "minecraft:iron_block": 80,
+    "minecraft:iron_bars": 100,
+    "minecraft:blast_furnace": 8,
+    "minecraft:dispenser": 12,
+    "minecraft:lantern": 20,
+    "minecraft:anvil": 2,
+    "minecraft:grindstone": 2
+  },
+  "optionalBlocks": {
+    "create:propeller": 2,
+    "create:mechanical_drill": 2,
+    "minecraft:chest": 8,
+    "minecraft:barrel": 4,
+    "create:cogwheel": 8,
+    "create:flywheel": 2
+  },
+  "forbiddenBlocks": [
+    "minecraft:tnt",
+    "minecraft:bedrock",
+    "minecraft:command_block",
+    "minecraft:spawner"
+  ],
+  "scoreValue": 75,
+  "crewMin": 8,
+  "crewMax": 20,
+  "crewRecommended": 15,
+  "speedMultiplier": 1.1,
+  "turnRateMultiplier": 1.0,
+  "healthMultiplier": 1.2,
+  "tags": ["multirole", "patrol", "fleet", "balanced"],
+  "recognitionPriority": 30
+}

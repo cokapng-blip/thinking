@@ -1,0 +1,44 @@
+{
+  "id": "destroyer",
+  "displayName": "Destroyer",
+  "description": "Fast, maneuverable warship for fleet screening and anti-submarine warfare",
+  "icon": "navalwarfare:textures/gui/vehicle/destroyer.png",
+  "minLength": 40,
+  "maxLength": 80,
+  "minWidth": 8,
+  "maxWidth": 14,
+  "minHeight": 8,
+  "maxHeight": 16,
+  "minBlockCount": 500,
+  "maxBlockCount": 3000,
+  "requiredBlocks": {
+    "minecraft:dark_oak_planks": 100,
+    "minecraft:iron_block": 30,
+    "minecraft:iron_bars": 50,
+    "minecraft:blast_furnace": 4,
+    "minecraft:dispenser": 6,
+    "minecraft:lantern": 10
+  },
+  "optionalBlocks": {
+    "create:propeller": 2,
+    "create:mechanical_drill": 1,
+    "minecraft:chest": 4,
+    "minecraft:barrel": 2,
+    "create:cogwheel": 4
+  },
+  "forbiddenBlocks": [
+    "minecraft:tnt",
+    "minecraft:bedrock",
+    "minecraft:command_block",
+    "minecraft:spawner"
+  ],
+  "scoreValue": 50,
+  "crewMin": 4,
+  "crewMax": 12,
+  "crewRecommended": 8,
+  "speedMultiplier": 1.2,
+  "turnRateMultiplier": 1.1,
+  "healthMultiplier": 1.0,
+  "tags": ["escort", "anti_sub", "screening", "fast"],
+  "recognitionPriority": 20
+}

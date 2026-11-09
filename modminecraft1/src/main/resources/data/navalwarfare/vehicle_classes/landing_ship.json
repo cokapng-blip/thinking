@@ -1,0 +1,48 @@
+{
+  "id": "landing_ship",
+  "displayName": "Landing Ship",
+  "description": "Amphibious assault vessel for beach landings and ground force deployment",
+  "icon": "navalwarfare:textures/gui/vehicle/landing_ship.png",
+  "minLength": 40,
+  "maxLength": 100,
+  "minWidth": 12,
+  "maxWidth": 20,
+  "minHeight": 8,
+  "maxHeight": 18,
+  "minBlockCount": 800,
+  "maxBlockCount": 6000,
+  "requiredBlocks": {
+    "minecraft:dark_oak_planks": 200,
+    "minecraft:iron_block": 60,
+    "minecraft:iron_bars": 40,
+    "minecraft:blast_furnace": 4,
+    "minecraft:dispenser": 6,
+    "minecraft:lantern": 15,
+    "minecraft:chest": 12,
+    "minecraft:barrel": 6,
+    "minecraft:iron_door": 4
+  },
+  "optionalBlocks": {
+    "create:propeller": 2,
+    "create:mechanical_drill": 2,
+    "minecraft:crafting_table": 2,
+    "create:cogwheel": 6,
+    "create:deployer": 2,
+    "minecraft:redstone_lamp": 4
+  },
+  "forbiddenBlocks": [
+    "minecraft:tnt",
+    "minecraft:bedrock",
+    "minecraft:command_block",
+    "minecraft:spawner"
+  ],
+  "scoreValue": 40,
+  "crewMin": 5,
+  "crewMax": 20,
+  "crewRecommended": 12,
+  "speedMultiplier": 0.95,
+  "turnRateMultiplier": 0.85,
+  "healthMultiplier": 1.3,
+  "tags": ["amphibious", "landing", "assault", "troops", "beach"],
+  "recognitionPriority": 20
+}

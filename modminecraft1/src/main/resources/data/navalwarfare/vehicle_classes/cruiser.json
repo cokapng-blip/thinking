@@ -1,0 +1,49 @@
+{
+  "id": "cruiser",
+  "displayName": "Cruiser",
+  "description": "Heavy warship with significant firepower and armor for independent operations",
+  "icon": "navalwarfare:textures/gui/vehicle/cruiser.png",
+  "minLength": 100,
+  "maxLength": 160,
+  "minWidth": 16,
+  "maxWidth": 24,
+  "minHeight": 14,
+  "maxHeight": 28,
+  "minBlockCount": 5000,
+  "maxBlockCount": 15000,
+  "requiredBlocks": {
+    "minecraft:dark_oak_planks": 500,
+    "minecraft:iron_block": 200,
+    "minecraft:iron_bars": 200,
+    "minecraft:blast_furnace": 16,
+    "minecraft:dispenser": 24,
+    "minecraft:lantern": 40,
+    "minecraft:anvil": 4,
+    "minecraft:grindstone": 4,
+    "minecraft:netherite_block": 10
+  },
+  "optionalBlocks": {
+    "create:propeller": 3,
+    "create:mechanical_drill": 3,
+    "minecraft:chest": 16,
+    "minecraft:barrel": 8,
+    "create:cogwheel": 16,
+    "create:flywheel": 4,
+    "create:mechanical_arm": 2
+  },
+  "forbiddenBlocks": [
+    "minecraft:tnt",
+    "minecraft:bedrock",
+    "minecraft:command_block",
+    "minecraft:spawner"
+  ],
+  "scoreValue": 100,
+  "crewMin": 15,
+  "crewMax": 40,
+  "crewRecommended": 30,
+  "speedMultiplier": 1.0,
+  "turnRateMultiplier": 0.9,
+  "healthMultiplier": 1.5,
+  "tags": ["heavy", "independent", "firepower", "armored"],
+  "recognitionPriority": 40
+}
